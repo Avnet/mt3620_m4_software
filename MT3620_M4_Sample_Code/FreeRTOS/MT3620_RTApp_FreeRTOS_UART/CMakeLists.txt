@@ -16,6 +16,7 @@ add_compile_definitions(OSAI_ENABLE_DMA)
 # When place CODE_REGION in FLASH instead of TCM, please enable this definition:
 # add_compile_definitions(M4_ENABLE_XIP_FLASH)
 add_link_options(-specs=nano.specs -specs=nosys.specs)
+set(CMAKE_C_FLAGS "-fno-common -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall")
 
 # Executable
 add_executable(${PROJECT_NAME}
